@@ -1,2 +1,2 @@
 Git is a distributed version cintrol system.
-Git is free softwre.
+Git is 是的发达 free softwre.
