@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>技术JZ</title>
+    <link href="/static/user-login/img/weixao.ico" rel="icon" type="image/x-ico">
+    <link rel="stylesheet" href="/static/user-login/css/userlogin.css">
+</head>
+<body>
+
+<div class="login-box">
+    <h1>Login</h1>
+    <div class="textbox">
+        <i class="fa fa-user" aria-hidden="true"></i>
+        <input type="text" id="text_user" placeholder="Username" name="" value="root"/>
+    </div>
+    <div class="textbox">
+        <i class="fa fa-lock" aria-hidden="true"></i>
+        <input type="password" id="pass_user" placeholder="password" name="" value="123456"/>
+    </div>
+    <input  class="btn" type="button" name="" value="Sign in"/>
+</div>
+
+<div class="button_div">
+    <span id="span_01">
+
+    湘ICP备19009519号
+
+    </span>
+</div>
+<script src="/static/plugins/jquery/js/jquery.min.js"></script>
+<script>
+    var sub=$(".btn").click(function () {
+     /*   $.post("demo_test_post.asp",
+            {
+                name:"Donald Duck",
+                city:"Duckburg"
+            },
+            function(data,status){
+                alert("Data: " + data + "\nStatus: " + status);
+            });*/
+    var userName= $("#text_user").val();
+    var password=$("#pass_user").val();
+        $.get('/admin/login',{
+                userName:userName,
+            password:password
+        },function(data) {
+           /* if(data.code === 1){
+                halo.showMsgAndRedirect(data.msg,'success',1000,'/admin/backup?type=${type}',"${options.admin_pjax!'true'}");
+            }else{
+                halo.showMsg(data.msg,'error',2000);
+            }*/
+          // alert(data.code+":"+data.result.userPass+":"+data.result.userName)
+            if(data.code==1)
+            window.location.href = "http://www.itikunow.cn:8090/";
+
+
+        },'JSON');
+    })
+
+</script>
+</body>
+</html>
