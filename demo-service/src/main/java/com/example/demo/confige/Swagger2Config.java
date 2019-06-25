@@ -20,7 +20,7 @@ public class Swagger2Config {
                         .title("用户信息管理系统_接口文档")
                         .description("描述：用于管理集团旗下公司的人员信息,具体包括用户模块...")
                         //.contact(new Contact("一只袜子", null, null))
-                        .version("版本号:2.0")
+                        .version("版本号:1.0")
                         .build())
                 .select()
                 .apis(RequestHandlerSelectors.basePackage("com.example.demo.Web.contruller"))
