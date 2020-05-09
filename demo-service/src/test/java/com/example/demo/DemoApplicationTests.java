@@ -16,6 +16,7 @@ public class DemoApplicationTests {
     @Test
     public void contextLoads() {
         restTemplate.getForObject("/admin",String.class);
+		int a=0;
     }
 
 }
